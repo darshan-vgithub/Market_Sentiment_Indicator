@@ -6,27 +6,27 @@ const marketSentimentData = [
   {
     title: "Extreme Fear",
     color: "#ff565b",
-    range: [0, 40],
+    range: [0, 20],
   },
   {
     title: "Fear",
     color: "#ffa947",
-    range: [40, 60],
+    range: [20, 40],
   },
   {
     title: "Neutral",
     color: "#ffca15",
-    range: [60, 80],
+    range: [40, 60],
   },
   {
     title: "Greed",
     color: "#c5d335",
-    range: [80, 100],
+    range: [60, 80],
   },
   {
     title: "Extreme Greed",
     color: "#6bc548",
-    range: [100, 120],
+    range: [80, 100],
   },
 ];
 
@@ -62,6 +62,7 @@ const MarketSentimentIndicator = () => {
           nrOfLevels={20}
           percent={(currentScore - marketSentimentData[0].range[0]) / 120}
           arcWidth={0.5}
+          cornerRadius={3}
           colors={marketSentimentData.map(({ color }) => color)}
           hideText={true}
           style={{
