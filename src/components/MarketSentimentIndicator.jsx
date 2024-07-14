@@ -79,10 +79,6 @@ const MarketSentimentIndicator = () => {
           color: marketSentimentData.find(
             (sentiment) => sentiment.title === selectedTitle
           )?.color,
-          textAlign: "center",
-          fontSize: "24px",
-          position: "relative",
-          bottom: "200px",
         }}
       >
         {selectedTitle}
