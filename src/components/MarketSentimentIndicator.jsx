@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GaugeChart from "react-gauge-chart";
-import "./style.css";
+import "../../src/style.css";
 
 const marketSentimentData = [
   {
