@@ -1,10 +1,33 @@
 import React from "react";
 import Chart from "react-apexcharts";
+
 const AssetClassperformanceChart = ({ number }) => {
-  const generateSeriesData = (baseValue, multiplier) => {
-    // Generate a series of data up to the given number with a multiplier
-    return Array.from({ length: number }, (_, i) => baseValue + i * multiplier);
+  const generateSeriesData = (baseYear, multiplier) => {
+    return Array.from({ length: number }, (_, i) => ({
+      x: baseYear + i,
+      y: 1000 + i * multiplier,
+    }));
   };
+
+  const seriesData = [
+    {
+      name: "Series 1",
+      data: generateSeriesData(2020, 5), 
+    },
+    {
+      name: "Series 2",
+      data: generateSeriesData(2020, 7),
+    },
+    {
+      name: "Series 3",
+      data: generateSeriesData(2020, 10),
+    },
+    {
+      name: "Series 4",
+      data: generateSeriesData(2020, 12), 
+    },
+  ];
+
   const options = {
     chart: {
       type: "area",
@@ -14,36 +37,28 @@ const AssetClassperformanceChart = ({ number }) => {
       },
     },
     colors: ["#FF4560", "#008FFB", "#00E396", "#FEB019"],
-    series: [
-      {
-        name: "Series 1",
-        data: generateSeriesData(0, 5), // Different data for Series 1
-      },
-      {
-        name: "Series 2",
-        data: generateSeriesData(0, 3), // Different data for Series 2
-      },
-      {
-        name: "Series 3",
-        data: generateSeriesData(0, 2), // Different data for Series 3
-      },
-      {
-        name: "Series 4",
-        data: generateSeriesData(0, 4), // Different data for Series 4
-      },
-    ],
+    series: seriesData,
     xaxis: {
-      categories: Array.from({ length: number }, (_, i) => `Point ${i + 1}`),
+      type: "numeric",
+      labels: {
+        formatter: function (val) {
+          return `${val}`;
+        },
+      },
+      title: {
+        text: "Year",
+      },
+    },
+    yaxis: {
+      title: {
+        text: "Amount",
+      },
     },
   };
+
   return (
     <div>
-      <Chart
-        options={options}
-        series={options.series}
-        type="area"
-        height={350}
-      />
+      <Chart options={options} series={seriesData} type="area" height={350} />
     </div>
   );
 };

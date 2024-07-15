@@ -18,15 +18,33 @@ const FIIDIIChart = ({ number }) => {
     series: [
       {
         name: "Series 1",
-        data: generateSeriesData(31, 5), // Different data for Series 1
+        data: generateSeriesData(0, 5), // Different data for Series 1
       },
       {
         name: "Series 2",
-        data: generateSeriesData(31, 3), // Different data for Series 2
+        data: generateSeriesData(0, 3), // Different data for Series 2
       },
     ],
     xaxis: {
-      categories: Array.from({ length: number }, (_, i) => `Point ${i + 1}`),
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      title: {
+        text: "Amount",
+      },
     },
   };
 

@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
-import AssetClassperformanceChart from './AssetClassperformanceChart';
+import React, { useState } from "react";
+import AssetClassperformanceChart from "./AssetClassperformanceChart";
 
 const AssetClassPerformance = () => {
-   const [number, setNumber] = useState(7); // Default number of points
+  const [number, setNumber] = useState(7);
 
-   const handleInputChange = (event) => {
-     const value = parseInt(event.target.value, 10);
-     if (!isNaN(value) && value > 0) {
-       setNumber(value);
-     }
-   };
+  const handleInputChange = (event) => {
+    const value = parseInt(event.target.value, 10);
+    if (!isNaN(value) && value > 0) {
+      setNumber(value);
+    }
+  };
+
   return (
     <div>
-      <h1>AssetClassPerformance</h1>
+      <h1>Asset Class Performance</h1>
       <div>
         <label htmlFor="dataPoints">Number of Data Points: </label>
         <input
@@ -28,6 +29,6 @@ const AssetClassPerformance = () => {
       </div>
     </div>
   );
-}
+};
 
-export default AssetClassPerformance
+export default AssetClassPerformance;

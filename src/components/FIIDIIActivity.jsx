@@ -5,7 +5,7 @@ const FIIDIIActivity = () => {
   const [number, setNumber] = useState(7);
 
   const handleInputChange = (event) => {
-    const value = parseInt(event.target.value, 10);
+    const value = parseInt(event.target.value);
     if (!isNaN(value) && value > 0) {
       setNumber(value);
     }
