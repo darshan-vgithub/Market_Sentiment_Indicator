@@ -51,7 +51,7 @@ const MarketBreadthIndicator = () => {
             {[100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0].map((temp) => (
               <text
                 key={temp}
-                x="0"
+                x="1"
                 y={350 - temp * 3.3 + 5}
                 className="scale-number"
               >
@@ -62,9 +62,9 @@ const MarketBreadthIndicator = () => {
             {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((mark) => (
               <line
                 key={mark}
-                x1="45"
+                x1="20"
                 y1={350 - mark * 3.3}
-                x2="50"
+                x2="30"
                 y2={350 - mark * 3.3}
                 stroke="#ccc"
                 strokeWidth="1"
@@ -72,38 +72,38 @@ const MarketBreadthIndicator = () => {
             ))}
             {/* Thermometer outline */}
             <path
-              d="M50 50 Q50 20 70 20 Q90 20 90 50 V320 Q90 350 70 350 Q50 350 50 320 Z"
+              d="M40 50 Q40 20 70 20 Q100 20 100 50 V320 Q100 350 70 350 Q40 350 40 320 Z"
               fill="white"
               stroke="#ccc"
-              strokeWidth="2"
+              strokeWidth="3"
             />
             {/* Rounded top */}
             <path
-              d="M50 50 Q50 20 70 20 Q90 20 90 50"
+              d="M40 50 Q40 20 70 20 Q100 20 100 50"
               fill="white"
               stroke="#ccc"
-              strokeWidth="2"
+              strokeWidth="3"
             />
             {/* Bulb */}
             <circle
               cx="70"
               cy="350"
-              r="40"
+              r="45"
               fill="white"
               stroke="#ccc"
-              strokeWidth="2"
+              strokeWidth="3"
             />
             {/* Mercury */}
             <rect
-              x="55"
+              x="42"
               y={350 - value * 3.3}
-              width="30"
+              width="56"
               height={value * 3.3 + 30}
               fill={rangeData.color}
-              rx="15"
+              rx="25"
             />
             {/* Bulb fill */}
-            <circle cx="70" cy="350" r="39" fill={rangeData.color} />
+            <circle cx="70" cy="350" r="42" fill={rangeData.color} />
           </svg>
         </div>
       </div>
