@@ -14,11 +14,11 @@ const MarketBreadthIndicator = () => {
 
   const getRangeData = (value) => {
     for (let range of ranges) {
-      if (value >= range.range[0] && value < range.range[1]) {
+      if (value >= range.range[0] && value <= range.range[1]) {
         return range;
       }
     }
-    return { title: "" };
+    return ranges[ranges.length - 1]; // Return Extreme Greed for 100
   };
 
   const handleChange = (e) => {
@@ -47,41 +47,59 @@ const MarketBreadthIndicator = () => {
         <div className="range-title">{rangeData.title}</div>
         <div className="thermometer-wrapper">
           <svg viewBox="0 0 100 400" className="thermometer-svg">
-            <rect
-              x="30"
-              y="10"
-              width="40"
-              height="350"
-              rx="20"
-              ry="20"
+            {/* Thermometer outline */}
+            <path
+              d="M30 50 Q30 20 50 20 Q70 20 70 50 V320 Q70 350 50 350 Q30 350 30 320 Z"
               fill="white"
-              stroke="black"
+              stroke="#ccc"
               strokeWidth="2"
             />
+            {/* Rounded top */}
+            <path
+              d="M30 50 Q30 20 50 20 Q70 20 70 50"
+              fill="white"
+              stroke="#ccc"
+              strokeWidth="2"
+            />
+            {/* Bulb */}
             <circle
               cx="50"
               cy="350"
               r="30"
               fill="white"
-              stroke="black"
+              stroke="#ccc"
               strokeWidth="2"
             />
-            <rect x="45" y="20" width="10" height="330" fill="white" />
+            {/* Mercury */}
             <rect
-              x="45"
+              x="35"
               y={350 - value * 3.3}
-              width="10"
-              height={value * 3.3}
+              width="30"
+              height={value * 3.3 + 30}
               fill={rangeData.color}
+              rx="15"
             />
-            <circle cx="50" cy="350" r="20" fill={rangeData.color} />
+            {/* Bulb fill */}
+            <circle cx="50" cy="350" r="28" fill={rangeData.color} />
+            {/* Scale lines */}
+            {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((mark) => (
+              <line
+                key={mark}
+                x1="70"
+                y1={350 - mark * 3.3}
+                x2="75"
+                y2={350 - mark * 3.3}
+                stroke="#ccc"
+                strokeWidth="1"
+              />
+            ))}
           </svg>
           <div className="temperature-scale">
-            {[0, 20, 40, 60, 80, 100].map((temp) => (
+            {[100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0].map((temp) => (
               <div
                 key={temp}
                 className="scale-mark"
-                style={{ bottom: `${temp}%` }}
+                style={{ bottom: `${temp * 3.3}px` }}
               >
                 {temp}
               </div>
