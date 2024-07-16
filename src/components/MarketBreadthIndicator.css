@@ -1,14 +1,47 @@
 .market-breadth-indicator {
-  text-align: left;
+  text-align: center;
+  padding: 20px;
 }
 
 .icon-container {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust height as needed */
+  height: 90vh;
 }
 
-.large-icon {
-  font-size: 400px; /* Adjust size as needed */
+.range-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.thermometer-wrapper {
+  position: relative;
+  display: inline-block;
+  height: 400px;
+}
+
+.thermometer-svg {
+  height: 100%;
+  width: auto;
+}
+
+.temperature-scale {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.scale-mark {
+  position: absolute;
+  right: 0;
+  transform: translateY(50%);
 }
