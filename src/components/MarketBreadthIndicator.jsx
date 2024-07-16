@@ -46,33 +46,56 @@ const MarketBreadthIndicator = () => {
       <div className="icon-container">
         <div className="range-title">{rangeData.title}</div>
         <div className="thermometer-wrapper">
-          <svg viewBox="0 0 100 400" className="thermometer-svg">
+          <svg viewBox="0 0 120 400" className="thermometer-svg">
+            {/* Scale numbers */}
+            {[100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0].map((temp) => (
+              <text
+                key={temp}
+                x="0"
+                y={350 - temp * 3.3 + 5}
+                className="scale-number"
+              >
+                {temp}
+              </text>
+            ))}
+            {/* Scale lines */}
+            {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((mark) => (
+              <line
+                key={mark}
+                x1="45"
+                y1={350 - mark * 3.3}
+                x2="50"
+                y2={350 - mark * 3.3}
+                stroke="#ccc"
+                strokeWidth="1"
+              />
+            ))}
             {/* Thermometer outline */}
             <path
-              d="M30 50 Q30 20 50 20 Q70 20 70 50 V320 Q70 350 50 350 Q30 350 30 320 Z"
+              d="M50 50 Q50 20 70 20 Q90 20 90 50 V320 Q90 350 70 350 Q50 350 50 320 Z"
               fill="white"
               stroke="#ccc"
               strokeWidth="2"
             />
             {/* Rounded top */}
             <path
-              d="M30 50 Q30 20 50 20 Q70 20 70 50"
+              d="M50 50 Q50 20 70 20 Q90 20 90 50"
               fill="white"
               stroke="#ccc"
               strokeWidth="2"
             />
             {/* Bulb */}
             <circle
-              cx="50"
+              cx="70"
               cy="350"
-              r="30"
+              r="40"
               fill="white"
               stroke="#ccc"
               strokeWidth="2"
             />
             {/* Mercury */}
             <rect
-              x="35"
+              x="55"
               y={350 - value * 3.3}
               width="30"
               height={value * 3.3 + 30}
@@ -80,31 +103,8 @@ const MarketBreadthIndicator = () => {
               rx="15"
             />
             {/* Bulb fill */}
-            <circle cx="50" cy="350" r="28" fill={rangeData.color} />
-            {/* Scale lines */}
-            {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((mark) => (
-              <line
-                key={mark}
-                x1="70"
-                y1={350 - mark * 3.3}
-                x2="75"
-                y2={350 - mark * 3.3}
-                stroke="#ccc"
-                strokeWidth="1"
-              />
-            ))}
+            <circle cx="70" cy="350" r="39" fill={rangeData.color} />
           </svg>
-          <div className="temperature-scale">
-            {[100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0].map((temp) => (
-              <div
-                key={temp}
-                className="scale-mark"
-                style={{ bottom: `${temp * 3.3}px` }}
-              >
-                {temp}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>
