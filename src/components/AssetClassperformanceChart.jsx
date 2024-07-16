@@ -12,7 +12,7 @@ const AssetClassperformanceChart = ({ number }) => {
   const seriesData = [
     {
       name: "Series 1",
-      data: generateSeriesData(2020, 5), 
+      data: generateSeriesData(2020, 5),
     },
     {
       name: "Series 2",
@@ -24,7 +24,7 @@ const AssetClassperformanceChart = ({ number }) => {
     },
     {
       name: "Series 4",
-      data: generateSeriesData(2020, 12), 
+      data: generateSeriesData(2020, 12),
     },
   ];
 

@@ -12,7 +12,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route
-            path="/MarketSentimentIndicator"
+            path="/"
             element={<MarketSentimentIndicator />}
           />
           <Route

@@ -7,7 +7,7 @@ const Menu = () => {
     <div id={styles.menu}>
       <ul>
         <li>
-          <Link to={"/MarketSentimentIndicator"}>
+          <Link to={"/"}>
             Market Sentiment Indicator
           </Link>
         </li>
