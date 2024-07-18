@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FIIDIIChart from "./FIIDIIChart";
 import "../../src/style.css";
+import Navbar from "./Navbar/Navbar";
 
 const FIIDIIActivity = () => {
   const [number, setNumber] = useState(7);
@@ -13,7 +14,8 @@ const FIIDIIActivity = () => {
   };
 
   return (
-    <div className="component-container">
+    <div className="component-container">\
+    <Navbar/>
       <h1>FIIDII Activity</h1>
       <div className="input-section">
         <label htmlFor="dataPoints">Number of Data Points:</label>

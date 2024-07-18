@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AssetClassperformanceChart from "./AssetClassperformanceChart";
 import "../../src/style.css";
+import Navbar from "./Navbar/Navbar";
 
 const AssetClassPerformance = () => {
   const [number, setNumber] = useState(7);
@@ -14,6 +15,7 @@ const AssetClassPerformance = () => {
 
   return (
     <div className="component-container">
+      <Navbar />
       <h1>Asset Class Performance</h1>
       <div className="input-section">
         <label htmlFor="dataPoints">Number of Data Points:</label>

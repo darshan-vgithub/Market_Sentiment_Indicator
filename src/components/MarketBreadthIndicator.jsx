@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../src/style.css";
+import Navbar from "./Navbar/Navbar";
 
 const MarketBreadthIndicator = () => {
   const [value, setValue] = useState(0);
@@ -34,6 +35,7 @@ const MarketBreadthIndicator = () => {
 
   return (
     <div className="component-container">
+      <Navbar/>
       <h1>Market Breadth Indicator</h1>
       <div className="input-section">
         <label htmlFor="value">Enter a value (0-100):</label>

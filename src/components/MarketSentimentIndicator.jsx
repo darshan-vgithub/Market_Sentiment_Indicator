@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GaugeChart from "react-gauge-chart";
 import "../../src/style.css";
+import Navbar from "./Navbar/Navbar";
 
 const marketSentimentData = [
   { title: "Extreme Fear", color: "#ff565b", range: [0, 20] },
@@ -29,6 +30,7 @@ const MarketSentimentIndicator = () => {
 
   return (
     <div className="component-container">
+      <Navbar />
       <h1>Market Sentiment Indicator</h1>
       <div className="input-section">
         <label htmlFor="score">Score Value:</label>
