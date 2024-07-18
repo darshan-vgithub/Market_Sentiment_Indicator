@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../components/Navbar/navbar.module.css";
+import { LuGauge } from "react-icons/lu";
+import { FaThermometerEmpty } from "react-icons/fa";
+import { MdOutlineAutoGraph } from "react-icons/md";
+import { VscGraphLine } from "react-icons/vsc";
 
 const Menu = ({ isOpen, toggleMenu }) => {
   return (
@@ -8,22 +12,26 @@ const Menu = ({ isOpen, toggleMenu }) => {
       <ul>
         <li>
           <Link to={"/"} onClick={toggleMenu}>
-            Market Sentiment Indicator
+            <LuGauge className={styles.icon} />
+            <span className={styles.menuText}>Market Sentiment Indicator</span>
           </Link>
         </li>
         <li>
           <Link to={"/MarketBreadthIndicator"} onClick={toggleMenu}>
-            Market Breadth Indicator
+            <FaThermometerEmpty className={styles.icon} />
+            <span className={styles.menuText}>Market Breadth Indicator</span>
           </Link>
         </li>
         <li>
           <Link to={"/FIIDIIActivity"} onClick={toggleMenu}>
-            FIIDII Activity
+            <MdOutlineAutoGraph className={styles.icon} />
+            <span className={styles.menuText}>FIIDII Activity</span>
           </Link>
         </li>
         <li>
           <Link to={"/AssetClassPerformance"} onClick={toggleMenu}>
-            Asset Class Performance
+            <VscGraphLine className={styles.icon} />
+            <span className={styles.menuText}>Asset Class Performance</span>
           </Link>
         </li>
       </ul>

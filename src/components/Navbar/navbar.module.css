@@ -32,7 +32,12 @@
   color: #fc7b01;
   text-decoration: none;
   padding: 10px 20px;
-  display: block;
+  display: flex; /* Align icon and text in a row */
+  align-items: center; /* Center items vertically */
+}
+
+#menu ul li a .icon {
+  margin-right: 10px; /* Adjust spacing between icon and text */
 }
 
 @media (max-width: 1024px) {
