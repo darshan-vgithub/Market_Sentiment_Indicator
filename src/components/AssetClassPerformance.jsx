@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AssetClassperformanceChart from "./AssetClassperformanceChart";
+import "../../src/style.css";
 
 const AssetClassPerformance = () => {
   const [number, setNumber] = useState(7);
@@ -12,10 +13,10 @@ const AssetClassPerformance = () => {
   };
 
   return (
-    <div>
+    <div className="component-container">
       <h1>Asset Class Performance</h1>
-      <div>
-        <label htmlFor="dataPoints">Number of Data Points: </label>
+      <div className="input-section">
+        <label htmlFor="dataPoints">Number of Data Points:</label>
         <input
           id="dataPoints"
           type="number"
@@ -24,7 +25,7 @@ const AssetClassPerformance = () => {
           min="1"
         />
       </div>
-      <div>
+      <div className="chart-section">
         <AssetClassperformanceChart number={number} />
       </div>
     </div>
