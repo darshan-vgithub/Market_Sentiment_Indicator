@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FIIDIIChart from "./FIIDIIChart";
+import "../../src/style.css";
 
 const FIIDIIActivity = () => {
   const [number, setNumber] = useState(7);
@@ -12,10 +13,10 @@ const FIIDIIActivity = () => {
   };
 
   return (
-    <div>
+    <div className="component-container">
       <h1>FIIDII Activity</h1>
-      <div>
-        <label htmlFor="dataPoints">Number of Data Points: </label>
+      <div className="input-section">
+        <label htmlFor="dataPoints">Number of Data Points:</label>
         <input
           id="dataPoints"
           type="number"
@@ -24,7 +25,7 @@ const FIIDIIActivity = () => {
           min="1"
         />
       </div>
-      <div>
+      <div className="chart-section">
         <FIIDIIChart number={number} />
       </div>
     </div>
