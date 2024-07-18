@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GaugeChart from "react-gauge-chart";
-import "./style.css";
+import "../../src/style.css";
 
 const marketSentimentData = [
   {
@@ -79,10 +79,6 @@ const MarketSentimentIndicator = () => {
           color: marketSentimentData.find(
             (sentiment) => sentiment.title === selectedTitle
           )?.color,
-          textAlign: "center",
-          fontSize: "24px",
-          position: "relative",
-          bottom: "200px",
         }}
       >
         {selectedTitle}
