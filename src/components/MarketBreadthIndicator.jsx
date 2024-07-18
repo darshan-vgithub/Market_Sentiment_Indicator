@@ -35,7 +35,7 @@ const MarketBreadthIndicator = () => {
 
   return (
     <div className="component-container">
-      <Navbar/>
+      <Navbar />
       <h1>Market Breadth Indicator</h1>
       <div className="input-section">
         <label htmlFor="value">Enter a value (0-100):</label>
@@ -47,6 +47,9 @@ const MarketBreadthIndicator = () => {
           min="0"
           max="100"
         />
+      </div>
+      <div className="details-section" style={{ color: rangeData.color }}>
+        {rangeData.title}
       </div>
       <div className="chart-section">
         <div className="icon-container">
@@ -105,9 +108,6 @@ const MarketBreadthIndicator = () => {
             </svg>
           </div>
         </div>
-      </div>
-      <div className="details-section" style={{ color: rangeData.color }}>
-        {rangeData.title}
       </div>
     </div>
   );
