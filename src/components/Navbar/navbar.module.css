@@ -1,23 +1,22 @@
 #hamburgerIcon {
-  display: none; /* Hide the hamburger icon by default */
+  display: none;
 }
 
 #main {
-  height: 100%; /* Adjust height to cover entire viewport */
-  display: flex; /* Enable flex layout */
-  background-color: #f5f5f5;
+  height: 100%;
+  display: flex;
 }
 
 #menu {
-  width: 250px; /* Fixed width for the sidebar */
+  width: 250px;
   background-color: #f5f5f5;
-  height: 100%; /* Cover full height of the viewport */
-  position: fixed; /* Fix the sidebar to the left */
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
-  z-index: 1000; /* Ensure it's on top of other content */
-  overflow-y: auto; /* Allow scrolling if content exceeds viewport height */
-  transition: left 0.3s ease; /* Smooth transition for opening/closing */
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: left 0.3s ease;
 }
 
 #menu ul {
@@ -30,33 +29,33 @@
 }
 
 #menu ul li a {
-  color: orange;
+  color: #fc7b01;
   text-decoration: none;
-  padding: 10px 20px; /* Add padding to make links clickable */
-  display: block; /* Ensure links take up full width */
+  padding: 10px 20px;
+  display: block;
 }
 
 @media (max-width: 1024px) {
   #main {
-    background-color: transparent; /* Make main content transparent to show sidebar */
+    background-color: transparent;
   }
 
   #menu {
-    left: -250px; /* Start with sidebar hidden */
+    left: -250px;
   }
 
   #menu.active {
-    left: 0; /* Show sidebar when active class is applied */
+    left: 0;
   }
 
   #hamburgerIcon {
-    display: block; /* Display hamburger icon for mobile view */
+    display: block;
     font-size: 30px;
     cursor: pointer;
-    position: fixed; /* Position hamburger icon absolutely */
-    top: 20px; /* Adjust top position */
-    left: 20px; /* Adjust left position */
-    z-index: 1500; /* Ensure hamburger icon is on top of sidebar */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1500;
   }
 
   #menu ul {
