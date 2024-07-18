@@ -4,7 +4,6 @@
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: #ffffff;
   text-align: center;
@@ -111,4 +110,52 @@ rect {
   font-weight: 700;
   text-align: center;
   font-size: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .component-container {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .market-sentiment-indicator .title-bar,
+  .market-sentiment-indicator .score-value,
+  .market-sentiment-indicator .title-near-input,
+  .market-breadth-indicator .range-title,
+  .scale-number {
+    font-size: 16px;
+  }
+
+  .market-sentiment-indicator .gauge-chart-container {
+    height: 200px;
+  }
+
+  .thermometer-wrapper {
+    width: 100px;
+    height: 300px;
+  }
+
+  .icon-container {
+    margin-top: 10px;
+  }
+
+  .input-section {
+    margin-bottom: 15px;
+  }
+
+  input[type="number"] {
+    padding: 4px;
+    font-size: 14px;
+    width: 50px;
+  }
+
+  .details-section {
+    font-size: 18px;
+  }
+
+  .range-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
 }

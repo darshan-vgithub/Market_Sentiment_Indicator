@@ -5,16 +5,14 @@ import Navbar from "./components/Navbar/Navbar";
 import MarketBreadthIndicator from "./components/MarketBreadthIndicator";
 import FIIDIIActivity from "./components/FIIDIIActivity";
 import AssetClassPerformance from "./components/AssetClassPerformance";
+import "../src/global.css";
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={<MarketSentimentIndicator />}
-          />
+          <Route path="/" element={<MarketSentimentIndicator />} />
           <Route
             path="/MarketBreadthIndicator"
             element={<MarketBreadthIndicator />}
